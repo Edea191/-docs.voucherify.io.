@@ -1,0 +1,145 @@
+:root{
+    --header-background-color:#2d3b8d;
+    --span-color:#e0e0e0;
+    --button-color:#da6302;
+    --button-color-hover:#fa760a;
+    --textColor:#696767;
+}
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;    
+}
+
+
+
+/*----------Header------------*/
+
+header{
+    display: flex;
+    margin: 0;
+    background-color:var(--header-background-color);
+    padding: 5%;
+    justify-content: center;
+    
+}
+
+header select{
+    width: 350px;
+    height: 40px;
+    background-color: transparent;
+    color: whitesmoke;
+    border: black 1px solid;
+    border-radius: 5px;
+}
+header select-items{
+    color: black;
+    background-color: var(--textColor);
+}
+
+/*----------Main-----------*/
+
+main{
+    color:var(--textColor);
+    padding: 10px;
+    line-height: 20px;
+}
+.sample_Works{
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 5px;
+    border: solid var(--span-color) 1px;
+    border-radius: 5px;
+}
+
+h1{
+    margin: 20px 0px 20px 0px;
+}
+
+p{
+    margin-bottom: 20px;
+}
+.sample_Works .discription{
+margin-left: 10px;
+display: flex;
+flex-direction: column;
+}
+
+.fa-book-open{
+    background-color: #566ce7;
+    border: solid #566ce7 8px;
+    border-radius: 5px;
+    color: rgb(141, 221, 22);
+    margin-left: 5px;
+    align-self: center;
+}
+
+
+.tag{
+background-color: var(--span-color);
+padding: 2px;
+border-radius: 5%;
+
+}
+
+.tags{
+    line-height: 25px;
+    padding: 20px;
+    background-color: rgb(207, 225, 243);
+}
+
+.tags ul{
+    line-height: 30px;
+    padding: 20px;
+    
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+} 
+
+section{
+    margin-bottom: 10px;
+}
+
+button{  
+    display: flex;
+    
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--button-color);
+    border: var(--button-color);
+    border-radius: 5px;
+    transition: 0.5s;
+    margin-bottom: 20px;
+}
+
+button:hover{
+    background-color: var(--button-color-hover);
+    transition: 0.5s;
+}
+
+
+.fa-caret-right{
+align-self: center;
+color: wheat;
+margin-right: 5px;
+}
+
+
+button a{
+    color: white;
+    text-decoration-line: none;
+}
+
+
+
+
+
+/*---------Modal---------*/
+
+
