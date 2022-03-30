@@ -143,3 +143,101 @@ button a{
 /*---------Modal---------*/
 
 
+
+.modal_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    opacity: 0;
+    
+    width: 100vw;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.atribute button{
+margin: 0 !important;
+}
+
+.fixed_code{
+    display: flex;
+    justify-content: space-around;
+    background-color: #2d3b8d;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.modal_container.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal{
+    overflow: scroll;
+    padding: 30px 30px;
+    background-color: #2d3b8d;
+    width: 600px;
+    height: 300px;
+    max-width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.code{
+    height: 500px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color: #c0bdbd;
+    padding: 30px 30px;
+    background-color: #646464;
+    width: 600px;
+    max-width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
+.code span{
+    white-space: nowrap;
+
+}
+.modal p{
+    opacity: 0.7;
+}
+
+
+.menu{
+    margin: 10px;
+    border: 5px white soild;
+  }
+  
+  .menu_label{
+    background-color:#798df2;
+    cursor:pointer;
+    border: #798df2 2px;
+    border-radius: 10px 10px 0px 0px;
+  }
+  label{
+    cursor:pointer;
+    display: block; 
+  }
+  .modal_container label,.modal_container p{
+    margin-left:5px;
+  }
+  
+  .modal_container p{
+    margin-bottom: 5px;
+  }
+  
+  .menu_details{
+    background-color:#b9c4fa;
+     border: #b9c4fa 2px;
+    border-radius: 0px 0px 10px 10px;
+  }
+
+

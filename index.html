@@ -27,16 +27,162 @@
     <h1>Sample workflows</h1>
 <div class="sample_Works fixed_Code">
 
+
     <span class="fas fa-book-open"></span>
 
-    <div class="discription">
+    <div class="discription" id="open_modal_1">
     <h3>Fixed-code voucher redeemable once per customer </h3>
   
     <h4>Open Recipe ></h4>
     </div>
+
+ <!-- ------Modal 1-------------  modal btn-->   
+
+    <div class="modal_container" id="modal_container">
+
+        <div class="atribute">
+            <div class="fixed_code">
+                <div class="'Fixed_code_label">Fixed-code voucher redeemable once per customer</div>
+                <button id="close_modal1">close</button>
+            </div>
+        <div class="modal">
+            
+    <div class="container_menu" id="container_menu">
+
+      
+      <div class="menu_1 menu">
+        <div class="menu_1_label menu_label" onclick="show_div('menu_1_details')"><label>1. Initiate Voucherify client</label>
+        </div>
+        <div class="menu_1_details menu_details" id="menu_1_details">
+          <p>Now, let's check if our voucher is recognized by the promotion engine by calling the validation endpoint.</p>
+          <p>To do so, let's create the simplest Order Object and pass it together with the code to the validate method.</p>
+      </div>
+      </div>
+      
+        <div class="menu_2 menu">
+        <div class="menu_2_label menu_label" onclick="show_div('menu_2_details')"><label>2. Select API endpoint</label>
+        </div>
+        <div class="menu_2_details menu_details" id="menu_2_details">
+          <p>Match the API endpoint with the region you chose when creating your account <a href="https://docs.voucherify.io/docs/api-endpoints">(API endpoints list)</a>.</p>
+      </div>
+      </div>
+      
+      
+        <div class="menu_3 menu">
+        <div class="menu_3_label menu_label" onclick="show_div('menu_3_details')"><label>3. Create voucher</label>
+        </div>
+        <div class="menu_3_details menu_details" id="menu_3_details">
+          <p>Let's create a standalone voucher inspired with Michael Scott's GOLDEN TICKET 🏅 It's a 10% off discount and the voucher code is: GOLDEN_TICKET.</p>
+
+<p>As a result, Voucherify should reply with a voucher object.</p>
+      </div>
+      </div>
+      
+    <div class="menu_4 menu">
+        <div class="menu_4_label menu_label" onclick="show_div('menu_4_details')"><label>4. Validate voucher</label>
+        </div>
+        <div class="menu_4_details menu_details" id="menu_4_details">
+          <p>Now, let's check if our voucher is recognized by the promotion engine by calling the validation endpoint.
+</p>
+
+<p>To do so, let's create the simplest Order Object and pass it together with the code to the validate method.</p>
+      </div>
+      </div>
+      
+            <div class="menu_5 menu">
+        <div class="menu_5_label menu_label" onclick="show_div('menu_5_details')"><label>5. Identify customer</label>
+        </div>
+        <div class="menu_5_details menu_details" id="menu_5_details">
+          <p>Voucherify stores customers in the Customer Object. You can create one with a dedicated endpoint or just pass an object with an ID to the redemption endpoint, and the customer will be upserted.</p>
+      </div>
+      </div>
+      
+          <div class="menu_6 menu">
+        <div class="menu_6_label menu_label" onclick="show_div('menu_6_details')"><label>6. Redeem voucher</label>
+        </div>
+        <div class="menu_6_details menu_details" id="menu_6_details">
+          <p>When the customer is ready to check out, we can finalise the voucher application by calling the Redemption endpoint.</p>
+
+<p>You can list all redemptions for a given code or using any other filter with List Redemptions endpoint.</p>
+      </div>
+      </div>
+      
+          <div class="menu_7 menu">
+        <div class="menu_7_label menu_label" onclick="show_div('menu_7_details')"><label>7. Set up 1x per customer limit</label>
+        </div>
+        <div class="menu_7_details menu_details" id="menu_7_details">
+          <p>Now, the GOLDEN_TICKET can be used unlimited number of times by a single customer. To avoid the fuss, we need to attach a Validation Rule that limits applications to one per customer.</p>
+
+<p>The Sandbox project comes with a predefined rule that does exactly this — let's activate it for our voucher.</p>
+          
+          <p>Now, when the customer tries to use GOLDEN_TICKET again, Voucherify says "no".</p>
+      </div>
+      </div>
+    
+  </div>
+
+
+</div>
+<div class="code">
+                <span id="1"><p>  1  const { VoucherifyServerSide } = require('@voucherify/sdk')          </p> </span>
+                <span id="2"><p>  2                                                                     </p> </span>
+                <span id="3"><p>  3  const client = VoucherifyServerSide({                                 </p></span>
+                <span id="4"><p>  4 applicationId: 'XXX',                                               </p> </span>
+                <span id="5"><p>  5 secretKey: 'YYY',                                                   </p> </span>
+                <span id="6"><p>  6 // apiUrl: 'https://<region>.api.voucherify.io'                     </p> </span>
+                <span id="7"><p>  7 })                                                                  </p> </span>
+                <span id="8"><p>  8                                                                      </p></span>
+                <span id="9"><p>  9  const voucher = {                                                  </p> </span>
+                <span id="10"><p>10  "code": "GOLDEN_TICKET",                                           </p> </span>
+                <span id="11"><p>11   "discount": {</p></span>
+                <span id="12"><p>12  "percent_off": 10.0,</p></span>
+                <span id="13">13     "type": "PERCENT"</p></span>
+                <span id="14">14  }</span>
+                <span id="15">15  }</span>
+                <span id="16">16  </span>
+                <span id="17">17  client.vouchers.create(voucher).then(console.log)</span>
+                <span id="18">18  </span>
+                <span id="19">19  const order = {</span>
+                <span id="20">20    amount: 10000</span>
+                <span id="21">21  }</span>
+                <span id="22">22  </span>
+                <span id="23">23  client.validations.validate(voucher.code, {"order": order}).then(console.log)</span>
+                <span id="24">24  </span>
+                <span id="25">25 const customer = { </span>
+                <span id="26">26 source_id: "officemanager@bcbs.com"</span>
+                <span id="27">27  }</span>
+                <span id="28">28 </span>
+                <span id="29">29 client.customers.create(customer).then(console.log);</span>
+                <span id="30">30 </span>
+                <span id="31">31 client.validations.validate(voucher.code, { "order": order, "customer": customer })</span>
+                <span id="32">32  .then(console.log)</span>
+                <span id="33">33 </span>
+                <span id="34">34 client.redemptions.redeem(voucher.code, { "order": order, "customer": customer })</span>
+                <span id="35">35 .then(console.log)</span>
+                <span id="36">36</span>
+                <span id="37">37 client.redemptions.getForVoucher(voucher.code).then(console.log)</span>
+                <span id="38">38</span>
+                <span id="39">39 client.validationRules.get("val_t4ir0Dru7e").then(console.log)</span>
+                <span id="40">40</span>
+                <span id="41">41 client.validationRules.createAssignment("val_t4ir0Dru7e", {"voucher": voucher.code})</span>
+                <span id="42">42 .then(console.log)</span>
+                <span id="43">43 </span>
+                <span id="44">44 client.validations.validate(voucher.code, { "order": order, "customer": customer })</span>
+                <span id="45">45 .then(console.log)
+                <span id="46">46</span>
+</div>
+            
+ 
+        </div>
+
+    </div>
+<!-- ----------------------------------  -->
+
+
+
 </div>
 
-
+<!-- ------Modal 2-------------  -->
 <div class="sample_Works fixed_Code">
 
     
@@ -49,7 +195,7 @@
     </div>
 </div>
 
-
+<!-- ------Modal 3-------------  -->
 <div class="sample_Works fixed_Code">
 
     <span class="fas fa-book-open"></span>
@@ -60,6 +206,8 @@
     </div>
 </div>
 
+
+<!-- ------Modal 4-------------  -->
 <div class="sample_Works fixed_Code">
 
     <span class="fas fa-book-open"></span>
