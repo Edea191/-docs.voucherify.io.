@@ -60,18 +60,57 @@ function changeCodeColor(divNumber){
             break;
 
         case 'menu_2_details': 
-        allCodeColorOff()
-        for (i=9 ; i < 18; i++){
+            allCodeColorOff()
+            for (i=6 ; i < 7; i++){
+            document.getElementById(i).style.backgroundColor='grey';
+            }
+            break;
+
+        case 'menu_3_details': 
+            allCodeColorOff()
+            for (i=9 ; i < 18; i++){
+            document.getElementById(i).style.backgroundColor='grey';
+            }
+            break;
+
+        case 'menu_4_details': 
+            allCodeColorOff()
+            for (i=19 ; i < 23; i++){
+            document.getElementById(i).style.backgroundColor='grey';
+            }
+            break;
+
+        case 'menu_5_details': 
+            allCodeColorOff()
+            for (i=25 ; i < 33; i++){
+            document.getElementById(i).style.backgroundColor='grey';
+            document.getElementById(i).scroll;
+            }
+            break;
+
+        case 'menu_6_details': 
+            allCodeColorOff()
+            for (i=34 ; i < 38; i++){
+            document.getElementById(i).style.backgroundColor='grey';
+            }
+            break;
+
+        case 'menu_7_details': 
+            allCodeColorOff()
+            for (i=39 ; i < 46; i++){
             document.getElementById(i).style.backgroundColor='grey';
             }
             break;
     }
+
+    
+    
 }
 
 
 
 function allCodeColorOff(){
     for (i=1 ; i < 46; i++){
-        document.getElementById(i).style.backgroundColor='#646464';
+        document.getElementById(i).style.backgroundColor='#404854';
     }
 }

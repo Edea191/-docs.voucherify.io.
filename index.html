@@ -123,54 +123,57 @@
 
 
 </div>
-<div class="code">
-                <span id="1"><p>  1  const { VoucherifyServerSide } = require('@voucherify/sdk')          </p> </span>
-                <span id="2"><p>  2                                                                     </p> </span>
-                <span id="3"><p>  3  const client = VoucherifyServerSide({                                 </p></span>
-                <span id="4"><p>  4 applicationId: 'XXX',                                               </p> </span>
-                <span id="5"><p>  5 secretKey: 'YYY',                                                   </p> </span>
-                <span id="6"><p>  6 // apiUrl: 'https://<region>.api.voucherify.io'                     </p> </span>
-                <span id="7"><p>  7 })                                                                  </p> </span>
-                <span id="8"><p>  8                                                                      </p></span>
-                <span id="9"><p>  9  const voucher = {                                                  </p> </span>
-                <span id="10"><p>10  "code": "GOLDEN_TICKET",                                           </p> </span>
-                <span id="11"><p>11   "discount": {</p></span>
-                <span id="12"><p>12  "percent_off": 10.0,</p></span>
-                <span id="13">13     "type": "PERCENT"</p></span>
-                <span id="14">14  }</span>
-                <span id="15">15  }</span>
-                <span id="16">16  </span>
-                <span id="17">17  client.vouchers.create(voucher).then(console.log)</span>
-                <span id="18">18  </span>
-                <span id="19">19  const order = {</span>
-                <span id="20">20    amount: 10000</span>
-                <span id="21">21  }</span>
-                <span id="22">22  </span>
-                <span id="23">23  client.validations.validate(voucher.code, {"order": order}).then(console.log)</span>
-                <span id="24">24  </span>
-                <span id="25">25 const customer = { </span>
-                <span id="26">26 source_id: "officemanager@bcbs.com"</span>
-                <span id="27">27  }</span>
-                <span id="28">28 </span>
-                <span id="29">29 client.customers.create(customer).then(console.log);</span>
-                <span id="30">30 </span>
-                <span id="31">31 client.validations.validate(voucher.code, { "order": order, "customer": customer })</span>
-                <span id="32">32  .then(console.log)</span>
-                <span id="33">33 </span>
-                <span id="34">34 client.redemptions.redeem(voucher.code, { "order": order, "customer": customer })</span>
-                <span id="35">35 .then(console.log)</span>
-                <span id="36">36</span>
-                <span id="37">37 client.redemptions.getForVoucher(voucher.code).then(console.log)</span>
-                <span id="38">38</span>
-                <span id="39">39 client.validationRules.get("val_t4ir0Dru7e").then(console.log)</span>
-                <span id="40">40</span>
-                <span id="41">41 client.validationRules.createAssignment("val_t4ir0Dru7e", {"voucher": voucher.code})</span>
-                <span id="42">42 .then(console.log)</span>
-                <span id="43">43 </span>
-                <span id="44">44 client.validations.validate(voucher.code, { "order": order, "customer": customer })</span>
-                <span id="45">45 .then(console.log)
-                <span id="46">46</span>
-</div>
+
+<div class='code'>
+    <div class="code_review"><span class="js">JavaScript Code</span></div>
+    <span class="code_span" id="1"><span class="number lower">1</span><span class="purple">const</span> <span class="white">{</span> <span class=blue>VoucherifyServerSide</span> <span class="white">}</span> <span class="cyan">=</span> <span class="red">require</span><span class="white">(</span><span class='green'>@voucherify/sdk'</span><span class="white">)</span></span>
+    <span class='code_span' id="2"><span class="number lower">2</span></span>
+    <span class='code_span' id="3"><span class="number lower">3</span><span class="purple">const</span> <span class="blue">client</span> <span class="cyan">=</span> <span class="red">VoucherifyServerSide</span><span class="white">({</span></span>
+    <span class='code_span' id="4"><span class="number lower">4</span><span class="purple">applicationId</span><span class="white">:</span> <span class="green">'XXX'</span><span class="white">,</span></span>
+    <span class='code_span' id="5"><span class="number lower">5</span><span class="purple">secretKey</span><span class="white">:</span><span class="green">'YYY'</span><span class="white">,</span></span>
+    <span class='code_span' id="6"><span class="number lower">6</span>	// apiUrl: 'https://<region>.api.voucherify.io'</span>
+    <span class='code_span' id="7"><span class="number lower">7</span><span class="white">)}</span></span>
+    <span class='code_span' id="8"><span class="number lower">8</span></span>
+    <span class='code_span' id="9"><span class="number lower">9</span><span class="purple">const</span> <span class="blue">voucher</span><span class="cyan"> = </span><span class="white">{</span></span>
+    <span class='code_span' id="10"><span class="number">10</span><span class="purple">"code"</span><span class="white">:</span><span class="green"> "GOLDEN_TICKET"</span><span class="white">,</span></span>
+    <span class='code_span' id="11"><span class="number">11</span><span class="purple">"discount"</span>: <span class="white">{</span></span>
+    <span class='code_span' id="12"><span class="number">12</span><span class="purple">"percent_off"</span><span class="white">:</span> <span class="red">10.0</span><span class="white">,</span></span>
+    <span class='code_span' id="13"><span class="number">13</span><span class="purple">"type"</span><span class="white">:</span><span class="green"> "PERCENT"</span></span>
+    <span class='code_span' id="14"><span class="number">14</span><span class="white">}</span></span>
+    <span class='code_span' id="15"><span class="number">15</span><span class="white">}</span></span>
+    <span class='code_span' id="16"><span class="number">16</span></span>
+    <span class='code_span' id="17"><span class="number">17</span><span class="red">client</span><span class="white">.</span><span class="purple">vouchers</span><span class="white">.</span><span class="purple">create</span><span class="white">(</span><span class="red">voucher</span><span class="white">)</span><span class="white">.</span><span class="purple">then</span><span class="white">(</span><span class="red">console</span><span class="white">.</span><span class="purple">log</span><span class="white">)</span></span>
+    <span class='code_span' id="18"><span class="number">18</span></span>
+    <span class='code_span' id="19"><span class="number">19</span><span class="purple">const</span> <span class="blue">order</span> <span class="cyan">=</span><span class="white"> {</span></span>
+    <span class='code_span' id="20"><span class="number">20</span><span class="purple">amount</span><span class="white">:</span> <span class="red">10000</span></span>
+    <span class='code_span' id="21"><span class="number">21</span><span class="white">}</span></span>
+    <span class='code_span' id="22"><span class="number">22</span></span>
+    <span class='code_span' id="23"><span class="number">23</span><span class="red">client</span><span class="white">.</span><span class="purple">validations</span><span class="white">.</span><span class="purple">validate</span><span class="white">(</span><span class="red">voucher</span><span class="white">.</span><span class="purple">code</span><span class="white">, {</span><span class="purple">"order"</span><span class="white">:</span> <span class="red">order</span><span class="white">}).</span><span class="purple">then</span><span class="white">(</span><span class="red">console</span><span class="white">.</span><span class="purple">log</span><span class="white">)</span></span>
+    <span class='code_span' id="24"><span class="number">24</span></span>
+    <span class='code_span' id="25"><span class="number">25</span><span class="purple">const</span><span class="blue"> customer</span> <span class="cyan">=</span> <span class="white">{</span> </span>
+    <span class='code_span' id="26"><span class="number">26</span><span class="purple">source_id</span><span class="white">:</span> <span class="green">"officemanager@bcbs.com"</span></span>
+    <span class='code_span' id="27"><span class="number">27</span><span class="white">}</span></span>
+    <span class='code_span' id="28"><span class="number">28</span></span>
+    <span class='code_span' id="29"><span class="number">29</span><span class="red">client</span><span class="white">.</span><span class="purple">customers</span><span class="white">.</span><span class="purple">create</span><span class="white">(</span><span class="red">customer</span><span class="white">).</span><span class="purple">then</span><span class="white">(</span><span class="red">console</span><span class="white">.</span><span class="purple">log</span><span class="white">)</span><span class="white">;</span></span>
+    <span class='code_span' id="30"><span class="number">30</span></span>
+    <span class='code_span' id="31"><span class="number">31</span><span class="red">client</span><span class="white">.</span><span class="purple">validations</span><span class="white">.</span><span class="purple">validate</span><span class="white">(</span><span class="purple">voucher</span><span class="white">.</span><span class="red">code</span><span class="white">,</span> <span class="white">{</span> <span class="purple">"order"</span><span class = "white">:</span><span class="red"> order</span><span class="white">,</span> <span class="purple">"customer"</span><span class="white">:</span> <span class="red">customer</span> <span class="white">})</span></span>
+    <span class='code_span' id="32"><span class="number">32</span><span class="white">.</span><span class="purple">then</span><span class="white">(</span><span class="red">console</span><span class="white">.</span><span class="purple">log</span><span class="white">)</span></span>
+    <span class='code_span' id="33"><span class="number">33</span></span>
+    <span class='code_span' id="34"><span class="number">34</span><span class="red">client</span><span class="white">.</span><span class="purple">redemptions</span><span class="white">.</span><span class="purple">redeem</span><span class="white">(</span><span class="purple">voucher</span><span class="white">.</span><span class="red">code</span><span class="white">,</span> <span class="white">{</span> <span class="purple">"order"</span><span class = "white">:</span><span class="red"> order</span><span class="white">,</span> <span class="purple">"customer"</span><span class="white">:</span> <span class="red">customer</span> <span class="white">})</span></span>
+    <span class='code_span' id="35"><span class="number">35</span><span class="white">.</span><span class="purple">then</span><span class="white">(</span><span class="red">console</span><span class="white">.</span><span class="purple">log</span><span class="white">))</span></span>
+    <span class='code_span' id="36"><span class="number">36</span></span>
+    <span class='code_span' id="37"><span class="number">37</span><span class="red">client</span><span class="white">.</span><span class="purple">redemptions</span><span class="white">.</span><span class="purple">getForVoucher</span><span class="white">(</span><span class="red">voucher</span><span class="white">.</span><span class="purple">code</span><span class="white">)</span><span class="purple">then</span><span class="white">(</span><span class="red">console</span><span class="white">.</span><span class="purple">log</span><span class="white">)</span></span>
+    <span class='code_span' id="38"><span class="number">38</span></span>
+    <span class='code_span' id="39"><span class="number">39</span><span class="red">client</span><span class="white">.</span><span class="purple">validationRules</span><span class="white">.</span><span class="purple">get</span><span class="white">(</span><span class="green">"val_t4ir0Dru7e"</span><span class="white">)</span><span class="purple">then</span><span class="white">(</span><span class="red">console</span><span class="white">.</span><span class="purple">log</span><span class="white">)</span></span>
+    <span class='code_span' id="40"><span class="number">40</span></span>
+    <span class='code_span' id="41"><span class="number">41</span><span class="red">client</span><span class="white">.</span><span class="purple">validationRules</span><span class="white">.</span><span class="purple">createAssignment</span><span class="white">(</span><span class="green">"val_t4ir0Dru7e"</span><span class="white">,</span> <span class="white">{</span><span class="purple">"voucher"</span><span class="white">:</span><span class="red"> voucher</span><span class="white">.</span><span class="purple">code</span><span class="white">})</span></span>
+    <span class='code_span' id="42"><span class="number">42</span><span class="white">.</span><span class="purple">then</span><span class="white">(</span><span class="red">console</span><span class="white">.</span><span class="purple">log</span><span class="white">)</span></span>
+    <span class='code_span' id="43"><span class="number">43</span></span>
+    <span class='code_span' id="44"><span class="number">44</span><span class="red">client</span><span class="white">.</span><span class="purple">validations</span><span class="white">.</span><span class="purple">validate</span><span class="white">(</span><span class="purple">voucher</span><span class="white">.</span><span class="red">code</span><span class="white">,</span> <span class="white">{</span> <span class="purple">"order"</span><span class = "white">:</span><span class="red"> order</span><span class="white">,</span> <span class="purple">"customer"</span><span class="white">:</span> <span class="red">customer</span> <span class="white">})</span></span>
+    <span class='code_span' id="45"><span class="number">45</span><span class="white">.</span><span class="purple">then</span><span class="white">(</span><span class="red">console</span><span class="white">.</span><span class="purple">log</span><span class="white">)</span></span>
+        </div>
+        
+        
             
  
         </div>
