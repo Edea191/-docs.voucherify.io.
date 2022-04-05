@@ -29,19 +29,6 @@ header{
     
 }
 
-header select{
-    width: 350px;
-    height: 40px;
-    background-color: transparent;
-    color: whitesmoke;
-    border: black 1px solid;
-    border-radius: 5px;
-}
-header select-items{
-    color: black;
-    background-color: var(--textColor);
-}
-
 /*----------Main-----------*/
 
 main{
@@ -276,24 +263,29 @@ margin: 0 !important;
   .lower{
     margin-left:8px;
   }
-  
-  .purple{
-    color:purple;
+
+
+@media (min-width:800px){
+  .atribute{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 10% 90%;
+    grid-template-areas: "button code"
+                          "menu code";
+    
+    
   }
-  
-  .red{
-    color:red;
+  .code{
+    grid-area: "code";
+
   }
-  
-  .white{
-    color:white;
+
+  .container_menu{
+    grid-area: "menu";
   }
-  .green{
-    color:green;
+
+  .fixed_code{
+    grid-area: "button";
   }
-  .blue{
-    color:blue;
-  }
-  .cyan{
-    color:cyan;
-  }
+
+}
